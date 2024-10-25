@@ -2,113 +2,61 @@
 
 MILESTONE 1
 
-Nama : Abimanyu Kayana Maheswara
-
-Batch : HCK - 020
-
-Link Dashboard : https://public.tableau.com/shared/R7QF29RMM?:display_count=n&:origin=viz_share_link
-
 =============================================================
-# Milestones 1
-_Milestones ini dibuat guna mengevaluasi pembelajaran pada Hacktiv8 Data Science Fulltime Program khususnya pada Phase 0._
+# Analisis Penjualan Supermarket
 
----
+## Ringkasan Proyek
 
-# Assignment Problems
+Proyek ini bertujuan untuk menganalisis perilaku pelanggan dan tren penjualan di supermarket yang tersebar di beberapa kota. Dengan menganalisis data berdasarkan kategori produk, demografi pelanggan, dan pola pembelian, proyek ini memberikan wawasan yang dapat digunakan untuk meningkatkan strategi pemasaran dan performa penjualan secara keseluruhan. Analisis ini memungkinkan supermarket memahami preferensi konsumen, mengoptimalkan inventaris, dan menyesuaikan promosi untuk segmen pelanggan tertentu.
 
-Kamu adalah seorang Data Analyst yang akan mengerjakan projek besar untuk menyelesaikan suatu permasalahan client dan client kamu butuh sekali hasil analisa datamu menggunakan statistik dan dashboard visualisasi data untuk membantu mereka menyelesaikan masalah.
+## Identifikasi Masalah
 
----
+### Latar Belakang
 
-# Assignment Instructions
-## General Instructions
-1. Pilihlah satu topik **bebas** dan buat **problem statement** terlebih dahulu menggunakan metode SMART.
+Di industri ritel, memahami perilaku konsumen dan tren penjualan sangat penting untuk mempertahankan daya saing. Supermarket yang beroperasi di berbagai kota perlu menyesuaikan strategi pemasaran mereka sesuai dengan demografi dan preferensi lokal. Melalui analisis data, wawasan mengenai pola penjualan berdasarkan kategori produk, jenis kelamin, dan tipe pelanggan (misalnya, anggota vs. non-anggota) dapat diperoleh, membantu supermarket mengembangkan strategi penjualan yang lebih efektif dan tepat sasaran.
 
-2. Dataset dibebaskan dari sumber manapun (BigQuery, Kaggle, BPS, dll.) dan berformat apapun (csv, excel, json, sql query, dll.) **NOTE:** Wajib mencantumkan sumber referensi data pada bagian `Data Loading`.
+### Tujuan
 
-3. Sebelum menentukan tabel, kolom, atau hal lain dalam dataset mana yang akan dijadikan analisis dan visualisasi data, lakukan identifikasi dan penjabaran masalah supaya dapat memudahkan kamu dalam melakukan analisis. Kamu bisa menggunakan metode apapun seperti analisis SWOT, Fish bone diagram, 5W+1H, dsb.
-  - **Contoh:**
-  - Problem Statement: `Mengetahui Preferensi dan Perilaku Konsumsi Makanan di Area Urban di Indonesia dalam kurun waktu tahun 2021`
+Mengoptimalkan penjualan supermarket dengan menganalisis pola pembelian pelanggan berdasarkan kategori produk, jenis kelamin, dan tipe pelanggan di berbagai kota.
 
-  - Penjabaran masalah dengan metode 5W+1H:
+### Kerangka SMART
 
-    - Kota mana dengan rata-rata % pengeluaran makan paling besar?
-    - Bagaimana perilaku pemilihan makanan berdasarkan harga terhadap social class masyarakat?
-    - Apakah tingkat pendidikan sarjana memiliki preferensi memilih makanan-makanan yang sehat?
-    - Apakah warga DKI Jakarta masih mengonsumsi makanan tradisional?
-    - Usia berapa saja yang masih mengonsumsi makanan tradisional?
-    - dsb.
-  - Pertanyaan-pertanyaan/penjabaran masalah di atas dapat dijawab dengan data visualisasi dan analisis statistik.
+- **Specific**: Meningkatkan penjualan di cabang supermarket dengan memfokuskan pada preferensi pelanggan terkait kategori produk, jenis kelamin, dan tipe pelanggan.
+- **Measurable**: Menargetkan peningkatan total penjualan sebesar 10% dalam enam bulan.
+- **Achievable**: Menggunakan analisis data yang ada untuk mengidentifikasi peluang peningkatan penjualan melalui strategi pemasaran yang tepat sasaran.
+- **Relevant**: Fokus pada peningkatan penjualan cabang dengan performa lebih rendah dan memaksimalkan kategori produk populer di kalangan pelanggan tertentu.
+- **Time-Bound**: Mencapai peningkatan penjualan dalam waktu enam bulan.
 
-4. Setelah melakukan identifikasi dan penjabaran masalah, tentukan metrik/data apa saja yang diperlukan lalu tarik data yang diperlukan dari dataset yang sudah ditentukan menggunakan SQL. `Cantumkan semua query yang dibuat untuk menarik semua data yang diperlukan dalam milestone ini`.
-5. **Perlu diperhatikan** bahwa penjabaran masalah untuk dijawab menggunakan data visualisasi dan analisis statistik **HARUS** mengikuti kriteria berikut:
-  - Minimal terdapat `6 penjabaran` masalah dimana 4 penjabaran untuk `visualisasi data`, 1 penjabaran untuk `statistik deskriptif`, dan 1 penjabaran untuk `statistik inferensial`.
-6. Untuk `Data Visualisasi` dibebaskan menggunakan tipe visualisasi (batang, garis, dsb) dan library (matplotlib, pyplot, seaborn, dsb) apapun, disesuaikan dengan penjabaran masalahnya. `Minimal 4 visualisasi sesuai dengan jumlah minimum penjabaran untuk bagian visualisasi data`. **WAJIB** memberikan insight di tiap visualisasi data.
-7. Untuk `Statistik Deskriptif`, pilih minimal salah satu perhitungan/analisis statistik deskriptif seperti *central tendency*, *measure of variance*, *outlier analysis*, *distribution*, dsb. `Sesuaikan dengan penjabaran masalah yang ditentukan`.
-8. Untuk `Statistik Inferensial`, pilih minimal salah satu perhitungan/analisis statistik inferensial seperti *confidence interval*, *statistical significance*, *statistical testing*, *hypothesis testing: one sample, two sample independent, paired test, ANOVA, chi-square*, dsb. `Sesuaikan dengan penjabaran masalah yang ditentukan`.
-9. Output dari milestone ini adalah dashboard data visualisasi menggunakan `Tableau Public` dan analisis serta pengolahan data di `jupyter notebook`.
+## Pertanyaan Utama
 
-## Notebook Instructions
-1. Lakukan data cleaning dan preprocessing pada notebook
-2. Notebook harus mengikuti format berikut:
-  1. Perkenalan
-      > Bab pengenalan harus diisi dengan identitas.
+Analisis ini bertujuan untuk menjawab pertanyaan berikut:
 
-  2. Identifikasi Masalah
-      > Bab ini harus menyantumkan **topik permasalahan**, **problem statement**, **latar belakang**, serta **penjabaran masalah** yang ingin dianalisis menggunakan metode statistik dan data Visualisasi.
+1. Kategori produk apa yang memiliki total penjualan tertinggi?
+2. Bagaimana distribusi penjualan antara pelanggan pria dan wanita?
+3. Cabang mana yang memiliki total penjualan tertinggi?
+4. Apakah anggota (members) memiliki tren pembelian yang berbeda dibandingkan pelanggan biasa?
+5. Berapa rata-rata penjualan per transaksi?
+6. Apakah ada perbedaan signifikan dalam rata-rata penjualan antar cabang?
 
-  3. Data Loading 
-      > Bagian ini berisi proses *data loading* dan eksplorasi data sederhana. Cantumkan query SQL masing-masing data yang di-load jika menggunakan dari BigQuery atau server SQL lainnya. Tampilkan pulai datanya.
+## Data dan Metodologi
 
-  4. Data Cleaning
-      > Bagian ini berisi proses penyiapan data berupa data cleaning sebelum dilakukan *explorasi data* lebih lanjut. Proses cleaning dapat berupa memberi nama baru untuk setiap kolom, mengisi missing values, menghapus kolom yang tidak dipakai, dan lain sebagainya.
+Dataset yang digunakan dalam proyek ini mencakup transaksi pelanggan, informasi produk, dan data penjualan dari beberapa cabang supermarket. Analisis dilakukan melalui visualisasi data, statistik deskriptif, dan metode statistik inferensial.
 
-  5. Analisis dan perhitungan
-      > Bagian ini berisi proses analisis, penjelasan, perhitungan statistik deskriptif, inferensial, serta pembuatan visualisasi data. Untuk visualisasi data wajib memberikan insight di tiap visualisasinya.
+### Alat yang Digunakan
 
-  6. Pengambilan Kesimpulan
-      > Pada bab terakhir ini, **harus berisi** kesimpulan yang mencerminkan solusi/rekomendasi/jawaban atas permasalahan yang diangkat serta menarik benang merah dari seluruh analisis dan perhitungan secara singkat, jelas, dan padat.
+- **Visualisasi Data**: Tableau
+- **Pemrosesan & Analisis Data**: Python (Jupyter Notebook)
+- **Metode Statistik**: Statistik deskriptif dan inferensial untuk memahami tren dan preferensi pelanggan.
 
-3. Simpan notebook dengan judul h8dsft_Milestone1_<nama-student>.ipynb, misal h8dsft_Milestone1_raka_ardhi.ipynb
+## Hasil & Wawasan
 
-## Dashboard Instructions
+Proyek ini memberikan wawasan untuk mengidentifikasi kategori produk berkinerja tinggi, pola pembelian pelanggan berdasarkan jenis kelamin, dan performa penjualan per cabang. Wawasan ini bermanfaat untuk meningkatkan strategi pemasaran dan menyesuaikan promosi untuk segmen pelanggan tertentu, sehingga mendukung keputusan bisnis yang lebih baik dan peningkatan penjualan.
 
-1. Dashboard dibuat menggunakan `Tableau`.
-2. Dashboard yang dibuat terdiri dari 2 bagian : `Visualisasi` dan `Statistical Analysis` yang dapat dibuat dalam 1 halaman atau multi halaman.
-3. Untuk bagian Visualisasi :
-  - Minimal ada 4 figure/visualisasi data yang ditampilkan dalam halaman `Visualisasi` yang sesuai dengan yang dibuat pada Notebook.
-  - Minimal ada 1 interactivity pada dashboard
-  - Tidak perlu menulis insightnya, dashboard visualisasi sejatinya hanya kumpulan visualisasi data
-  - Apabila jenis plot pada dashboard dengan di Python berbeda, dari segi jenis dan hasil, tidak masalah jika lampirkan plot dari dashboard ke notebook dan tetap tampilkan data yang sudah dipreprocess pada notebook.
-4. Untuk bagian Statistical Analysis:
-  - Tulis proses analisis statistik deskriptif dan inferential yang dilakukan di notebook dari masalah yang diangkat hingga kesimpulan dari hasil analisis statistik.
+## Cara Mengakses Dashboard
 
-5. Presentasikan dashboard yang telah dibuat pada P1W1D4PM.
+Anda dapat menjelajahi dashboard visualisasi data interaktif di sini: [Tableau Dashboard](https://public.tableau.com/shared/R7QF29RMM?:display_count=n&:origin=viz_share_link)
 
----
 
-# Assignment Submission
+## Kesimpulan
 
-1. Tambahkan URL dashboard di bagian paling atas `.ipynb` dan di README.
-2. Tidak adanya URL dashboard di file .ipynb akan menyebabkan tidak dinilainya deployment Streamlit.
-3. Push Assigment yang telah dibuat ke akun Github masing-masing student dan Github Classroom.
-
----
-
-## Assignment Rubrics
-
-<img src="https://github.com/fahmimnalfrzki/Dataset/raw/main/Screenshot%202022-12-16%20at%2016.28.37.png"></img>
-
----
-
-## Score Reduction
-
-Jika Student terlambat mengumpulkan dengan waktu yang ditentukan, maka Graded Challenge akan diberi poin nol.
-
----
-
-```
-Total Points : 60
-
-Catatan : Penilaian Milestone  juga dapat dipengaruhi oleh aktivitas student selama Phase 0 berlangsung, baik sesi kelas maupun sesi mentoring dengan buddy-nya masing-masing sehingga terdapat kemungkinan adanya penambahan atau pengurangan nilai diluar rubric yang telah disebutkan diatas.
-```
+Dengan menganalisis data penjualan supermarket, proyek ini menunjukkan bagaimana wawasan berbasis data dapat membantu strategi bisnis yang efektif, mendukung pemahaman yang lebih baik tentang preferensi pelanggan, dan meningkatkan pengambilan keputusan terkait inventaris dan pemasaran.
